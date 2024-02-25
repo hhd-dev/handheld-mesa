@@ -14,5 +14,7 @@ git clone https://github.com/hhd-dev/patched-mesa patched-mesa
 cd patched-mesa
 updpkgsums; time makepkg -s -f --skippgpcheck
 
+# You might need to press q for `makepkg` to continue
+
 sudo pacman -U *.tar.zst
 ```
