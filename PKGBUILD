@@ -4,18 +4,18 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 
-pkgbase=mesa
+pkgbase=handheld-mesa
 pkgname=(
-  'vulkan-mesa-layers'
-  'opencl-clover-mesa'
-  'opencl-rusticl-mesa'
-  'vulkan-intel'
-  'vulkan-radeon'
-  'vulkan-swrast'
-  'vulkan-virtio'
-  'libva-mesa-driver'
-  'mesa-vdpau'
-  'mesa'
+  'handheld-vulkan-mesa-layers'
+  'handheld-opencl-clover-mesa'
+  'handheld-opencl-rusticl-mesa'
+  'handheld-vulkan-intel'
+  'handheld-vulkan-radeon'
+  'handheld-vulkan-swrast'
+  'handheld-vulkan-virtio'
+  'handheld-libva-mesa-driver'
+  'handheld-mesa-vdpau'
+  'handheld-mesa'
 )
 pkgver=23.3.6
 pkgrel=1
@@ -185,7 +185,7 @@ _install() {
 
 _libdir=usr/lib
 
-package_vulkan-mesa-layers() {
+package_handheld-vulkan-mesa-layers() {
   pkgdesc="Mesa's Vulkan layers"
   depends=(
     'libdrm'
@@ -194,7 +194,8 @@ package_vulkan-mesa-layers() {
 
     'python'
   )
-  conflicts=('vulkan-mesa-layer')
+  provides=('vulkan-mesa-layers')
+  conflicts=('vulkan-mesa-layer' 'vulkan-mesa-layers')
   replaces=('vulkan-mesa-layer')
 
   _install fakeinstall/usr/share/vulkan/explicit_layer.d
@@ -205,7 +206,7 @@ package_vulkan-mesa-layers() {
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
 }
 
-package_opencl-clover-mesa() {
+package_handheld-opencl-clover-mesa() {
   pkgdesc="OpenCL support with clover for mesa drivers"
   depends=(
     'clang'
@@ -218,9 +219,9 @@ package_opencl-clover-mesa() {
     'libclc'
   )
   optdepends=('opencl-headers: headers necessary for OpenCL development')
-  provides=('opencl-driver')
+  provides=('opencl-driver' 'opencl-clover-mesa')
   replaces=("opencl-mesa<=23.1.4-1")
-  conflicts=('opencl-mesa')
+  conflicts=('opencl-mesa' 'opencl-clover-mesa')
 
   _install fakeinstall/etc/OpenCL/vendors/mesa.icd
   _install fakeinstall/$_libdir/libMesaOpenCL*
@@ -229,7 +230,7 @@ package_opencl-clover-mesa() {
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
 }
 
-package_opencl-rusticl-mesa() {
+package_handheld-opencl-rusticl-mesa() {
   pkgdesc="OpenCL support with rusticl for mesa drivers"
   depends=(
     'clang'
@@ -243,9 +244,9 @@ package_opencl-rusticl-mesa() {
     'libclc'
   )
   optdepends=('opencl-headers: headers necessary for OpenCL development')
-  provides=('opencl-driver')
+  provides=('opencl-driver' 'opencl-rusticl-mesa')
   replaces=("opencl-mesa<=23.1.4-1")
-  conflicts=('opencl-mesa')
+  conflicts=('opencl-mesa' 'opencl-rusticl-mesa')
 
   _install fakeinstall/etc/OpenCL/vendors/rusticl.icd
   _install fakeinstall/$_libdir/libRusticlOpenCL*
@@ -253,7 +254,7 @@ package_opencl-rusticl-mesa() {
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
 }
 
-package_vulkan-intel() {
+package_handheld-vulkan-intel() {
   pkgdesc="Intel's Vulkan mesa driver"
   depends=(
     'libdrm'
@@ -265,7 +266,8 @@ package_vulkan-intel() {
     'zstd'
   )
   optdepends=('vulkan-mesa-layers: additional vulkan layers')
-  provides=('vulkan-driver')
+  provides=('vulkan-driver' 'vulkan-intel')
+  conflicts=('vulkan-intel')
 
   _install fakeinstall/usr/share/vulkan/icd.d/intel_*.json
   _install fakeinstall/$_libdir/libvulkan_intel*.so
@@ -273,7 +275,7 @@ package_vulkan-intel() {
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
 }
 
-package_vulkan-radeon() {
+package_handheld-vulkan-radeon() {
   pkgdesc="Radeon's Vulkan mesa driver"
   depends=(
     'libdrm'
@@ -287,7 +289,8 @@ package_vulkan-radeon() {
     'zstd'
   )
   optdepends=('vulkan-mesa-layers: additional vulkan layers')
-  provides=('vulkan-driver')
+  provides=('vulkan-driver' 'vulkan-radeon')
+  conflicts=('vulkan-radeon')
 
   _install fakeinstall/usr/share/drirc.d/00-radv-defaults.conf
   _install fakeinstall/usr/share/vulkan/icd.d/radeon_icd*.json
@@ -296,7 +299,7 @@ package_vulkan-radeon() {
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
 }
 
-package_vulkan-swrast() {
+package_handheld-vulkan-swrast() {
   pkgdesc="Vulkan software rasteriser driver"
   depends=(
     'libdrm'
@@ -310,9 +313,9 @@ package_vulkan-swrast() {
     'zstd'
   )
   optdepends=('vulkan-mesa-layers: additional vulkan layers')
-  conflicts=('vulkan-mesa')
+  conflicts=('vulkan-mesa' 'vulkan-swrast')
   replaces=('vulkan-mesa')
-  provides=('vulkan-driver')
+  provides=('vulkan-driver' 'vulkan-swrast')
 
   _install fakeinstall/usr/share/vulkan/icd.d/lvp_icd*.json
   _install fakeinstall/$_libdir/libvulkan_lvp.so
@@ -320,7 +323,7 @@ package_vulkan-swrast() {
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
 }
 
-package_vulkan-virtio() {
+package_handheld-vulkan-virtio() {
   pkgdesc="Venus Vulkan mesa driver for Virtual Machines"
   depends=(
     'libdrm'
@@ -332,7 +335,8 @@ package_vulkan-virtio() {
     'zstd'
   )
   optdepends=('vulkan-mesa-layers: additional vulkan layers')
-  provides=('vulkan-driver')
+  provides=('vulkan-driver' 'vulkan-virtio')
+  conflicts=('vulkan-virtio')
 
   _install fakeinstall/usr/share/vulkan/icd.d/virtio_icd*.json
   _install fakeinstall/$_libdir/libvulkan_virtio.so
@@ -340,7 +344,7 @@ package_vulkan-virtio() {
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
 }
 
-package_libva-mesa-driver() {
+package_handheld-libva-mesa-driver() {
   pkgdesc="VA-API drivers"
   depends=(
     'expat'
@@ -351,14 +355,15 @@ package_libva-mesa-driver() {
     'llvm-libs'
     'zstd'
   )
-  provides=('libva-driver')
+  provides=('libva-driver' 'libva-mesa-driver')
+  conflicts=('libva-mesa-driver')
 
   _install fakeinstall/$_libdir/dri/*_drv_video.so
 
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
 }
 
-package_mesa-vdpau() {
+package_handheld-mesa-vdpau() {
   pkgdesc="VDPAU drivers"
   depends=(
     'expat'
@@ -369,14 +374,15 @@ package_mesa-vdpau() {
     'llvm-libs'
     'zstd'
   )
-  provides=('vdpau-driver')
+  provides=('vdpau-driver' 'mesa-vdpau')
+  conflicts=('mesa-vdpau')
 
   _install fakeinstall/$_libdir/vdpau
 
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
 }
 
-package_mesa() {
+package_handheld-mesa() {
   depends=(
     'libdrm'
     'libelf'
@@ -397,10 +403,11 @@ package_mesa() {
     'opengl-man-pages: for the OpenGL API man pages'
   )
   provides=(
+    'mesa'
     'mesa-libgl'
     'opengl-driver'
   )
-  conflicts=('mesa-libgl')
+  conflicts=('mesa-libgl' 'mesa')
   replaces=('mesa-libgl')
 
   _install fakeinstall/usr/share/drirc.d/00-mesa-defaults.conf
