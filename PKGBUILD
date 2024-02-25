@@ -1,3 +1,4 @@
+# Original Maintainers
 # Maintainer: Laurent Carlier <lordheavym@gmail.com>
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
@@ -84,14 +85,14 @@ source=(
   # https://gitlab.com/evlaV/mesa/
   valve.patch
 )
-sha256sums=('69ccb1278641ff5bad71ca0f866188aeb1a92aadc4dbb9d35f50aebec5b8b50f'
+sha256sums=('cd3d6c60121dea73abbae99d399dc2facaecde1a8c6bd647e6d85410ff4b577b'
             'SKIP'
             '7052ba73bb07ea78873a2431ee4e828f4e72bda7d176d07f770fa48373dec537'
             '045c24124eea35342b1eb7638e84e4781a200eddc223ac2a3eb5a09e056c67ca'
             '690e69b9197e57bb784f5066a9e984bc0364df976f74aea427e89b41d19be502'
             '86aa88ef27406ebf158f181d3bae8bdd989bde8d6309798422e9e80dac28443e'
             '3d57ed154fcb472ccd094c61178188ea0ec61983087ce2c1e02b093538e8a560')
-b2sums=('69c7434ae9c503c14b5bf9abad9a3a26a1dd402461b098dcdb01b9da7a7e8652f897fd9681c809aa70d3ace77c448289d22400deca3854844a355eb0ac095583'
+b2sums=('1bec42973aa849ab3553942500de253213736eca5a71550f488cf915d65ee4f47d137772af1c59042f5803cfaf8152f278ccbab29c896d104985263a7121a2ba'
         'SKIP'
         '1ecf007b82260710a7bf5048f47dd5d600c168824c02c595af654632326536a6527fbe0738670ee7b921dd85a70425108e0f471ba85a8e1ca47d294ad74b4adb'
         '09792246c414433fd370732fba6d36561977ef18962c8853fec9cbb2c744d33eaaa8bb92f969710daa56c6cb852b6ed7b8c48bb07f4759d4e450eeb9363a94ad'
