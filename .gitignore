@@ -1,0 +1,9 @@
+*
+!*.patch
+!LICENSE
+!.SRCINFO
+!PKGBUILD
+!.gitignore
+!keys
+!keys/pgp
+!keys/pgp/*
