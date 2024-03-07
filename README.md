@@ -8,6 +8,11 @@ The packages are named as `handheld-*` to avoid auto-updating by pacman.
 You may use the suffix when uninstalling as `sudo pacman -R handheld-*` and pressing
 tab.
 
+> [!WARNING]  
+> Currently on Arch, GDM will not launch with mesa 23, as it expects mesa 24.
+> If you get an error saying to contact your system administrator, switch to
+> a different terminal and do `sudo pacman -S mesa`.
+
 # How to install
 ```bash
 git clone https://github.com/hhd-dev/patched-mesa patched-mesa
