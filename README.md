@@ -11,8 +11,14 @@ tab.
 > [!WARNING]  
 > Currently on Arch, GDM will not launch with mesa 23, as it expects mesa 24.
 > If you get an error saying to contact your system administrator, switch to
-> a different terminal and do `sudo pacman -S mesa`. This package will be updated
-> soon to mesa 24. If you get this error in the future, this is how to fix it.
+> a different terminal and do `sudo pacman -S mesa; sudo systemctl restart gdm`. 
+> 
+> Then, re-install this mesa if you want. 
+> 
+> If you get this error in the future, this is how to fix it.
+
+> [!IMPORTANT]
+> You might need to press Q for the install to continue.
 
 # How to install
 ```bash

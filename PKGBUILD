@@ -17,7 +17,7 @@ pkgname=(
   'handheld-mesa-vdpau'
   'handheld-mesa'
 )
-pkgver=23.3.6
+pkgver=24.0.2
 pkgrel=1
 epoch=1
 pkgdesc="An open-source implementation of the OpenGL specification"
@@ -77,27 +77,19 @@ source=(
   LICENSE
 
   gnome-shell-glthread-disable.patch
-  mesa-meson-c99.patch
-
-  # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/26105/
-  26105.patch
-
+  
   # https://gitlab.com/evlaV/mesa/
   valve.patch
 )
-sha256sums=('cd3d6c60121dea73abbae99d399dc2facaecde1a8c6bd647e6d85410ff4b577b'
+sha256sums=('94e28a8edad06d8ed2b83eb53f253b9eb5aa62c3080f939702e1b3039b56c9e8'
             'SKIP'
             '7052ba73bb07ea78873a2431ee4e828f4e72bda7d176d07f770fa48373dec537'
             '045c24124eea35342b1eb7638e84e4781a200eddc223ac2a3eb5a09e056c67ca'
-            '690e69b9197e57bb784f5066a9e984bc0364df976f74aea427e89b41d19be502'
-            '86aa88ef27406ebf158f181d3bae8bdd989bde8d6309798422e9e80dac28443e'
             '3d57ed154fcb472ccd094c61178188ea0ec61983087ce2c1e02b093538e8a560')
-b2sums=('1bec42973aa849ab3553942500de253213736eca5a71550f488cf915d65ee4f47d137772af1c59042f5803cfaf8152f278ccbab29c896d104985263a7121a2ba'
+b2sums=('f69e0b3edb7b8611f528a2e04104fe14b2fe8c799921be2d112dba744133813a19f90aa11d39f3f87a282e518003c7cc7966143d25e845f1f4489c461b22f661'
         'SKIP'
         '1ecf007b82260710a7bf5048f47dd5d600c168824c02c595af654632326536a6527fbe0738670ee7b921dd85a70425108e0f471ba85a8e1ca47d294ad74b4adb'
         '09792246c414433fd370732fba6d36561977ef18962c8853fec9cbb2c744d33eaaa8bb92f969710daa56c6cb852b6ed7b8c48bb07f4759d4e450eeb9363a94ad'
-        '8450725363ab9eda5ddbc3502d1ee5dcd38f3e999d802b1c6311b0a980ca28d871075ee021284a279be3f0a075a1a675b7cbf5650f117d362e23aff828b2e455'
-        '8ac8fbcf9a86a27b124a03c482ab42bfd92c2092b95586faaf82f3041591dc79f670bdbcda327108376db26f951cf29e1cb557e6fc4ca38c9d622e7f5a32e19e'
         '6fec5f5266b8b7b3528c827e1fc0dd3fcbd7b3e6c0e1bfbe881689b6048c35998f5b33299c14696ccb35a3c3d46b52427c1c0e2ffbb753b7d5b4a991ababd475')
 validpgpkeys=('8703B6700E7EE06D7A39B8D6EDAE37B02CEB490D'  # Emil Velikov <emil.l.velikov@gmail.com>
               '946D09B5E4C9845E63075FF1D961C596A7203456'  # Andres Gomez <tanty@igalia.com>
