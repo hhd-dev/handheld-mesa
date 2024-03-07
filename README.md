@@ -1,8 +1,7 @@
 # Patched Mesa for Gaming (Arch)
-A patched version of mesa tracking the version of 
-[Bazzite](https://github.com/ublue-os/bazzite/tree/main/spec_files/mesa),
-provided as an Arch package, based on the upstream mesa PKGBUILD.
-It includes valve patches which improve frametime stability.
+A patched version of mesa using Valve's patches that improve frame time stability.
+Provided as an Arch package, based on the upstream mesa PKGBUILD.
+The current version is mesa 24.
 
 The packages are named as `handheld-*` to avoid auto-updating by pacman.
 You may use the suffix when uninstalling as `sudo pacman -R handheld-*` and pressing
