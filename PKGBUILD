@@ -78,7 +78,7 @@ source=(
 
   # Upstream arch patches
   # Proposed crash fix from https://gitlab.freedesktop.org/mesa/mesa/-/issues/10613#note_2290167
-  radeon_bo_can_reclaim_slab.diff
+  radeon_bo_can_reclaim_slab.patch
   # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/27834
   vulkan-dispatch-table-add-an-uncompacted-version.patch
 
