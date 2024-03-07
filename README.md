@@ -4,8 +4,11 @@ Provided as an Arch package, based on the upstream mesa PKGBUILD.
 The current version is mesa 24.
 
 The packages are named as `handheld-*` to avoid auto-updating by pacman.
-You may use the suffix when uninstalling as `sudo pacman -R handheld-*` and pressing
-tab.
+You can revert to the original packages with:
+```bash
+sudo pacman -S libva-mesa-driver mesa-vdpau opencl-rusticl-mesa vulkan-mesa-layers \
+    vulkan-swrast mesa opencl-clover-mesa vulkan-intel vulkan-radeon vulkan-virtio
+```
 
 > [!WARNING]  
 > Currently on Arch, GDM will not launch with mesa 23, as it expects mesa 24.
