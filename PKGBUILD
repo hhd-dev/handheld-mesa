@@ -82,7 +82,7 @@ source=(
   valve.patch
 
   # Fix chrome acceleration on AMD (Z1E etc)
-  # Needs extra flags
+  # Needs extra flags and only works under xwayland
   # --use-gl=angle
   # --enable-features=Vulkan,DefaultANGLEVulkan,VulkanFromANGLE,VaapiVideoDecoder,VaapiIgnoreDriverChecks
   # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/26165
