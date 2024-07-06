@@ -18,7 +18,7 @@ pkgname=(
   'handheld-mesa-vdpau'
   'handheld-mesa'
 )
-pkgver=24.1.1
+pkgver=24.1.3
 pkgrel=1
 epoch=1
 pkgdesc="Open-source OpenGL drivers"
@@ -114,7 +114,7 @@ for _crate in "${!_crates[@]}"; do
   source+=($_crate-${_crates[$_crate]}.tar.gz::https://crates.io/api/v1/crates/$_crate/${_crates[$_crate]}/download)
 done
 
-sha256sums=('0038826c6f7e88d90b4ce6f719192fa58ca7dedf4edcaa1174cf7bd920ef89ea'
+sha256sums=('63236426b25a745ba6aa2d6daf8cd769d5ea01887b0745ab7124d2ef33a9020d'
             'SKIP'
             '7052ba73bb07ea78873a2431ee4e828f4e72bda7d176d07f770fa48373dec537'
             '045c24124eea35342b1eb7638e84e4781a200eddc223ac2a3eb5a09e056c67ca'
@@ -124,7 +124,7 @@ sha256sums=('0038826c6f7e88d90b4ce6f719192fa58ca7dedf4edcaa1174cf7bd920ef89ea'
             '5267fca4496028628a95160fc423a33e8b2e6af8a5302579e322e4b520293cae'
             'de3145af08024dea9fa9914f381a17b8fc6034dfb00f3a84013f7ff43f29ed4c'
             '23e78b90f2fcf45d3e842032ce32e3f2d1545ba6636271dcbf24fa306d87be7a')
-b2sums=('152ce5f4847a321689bf4aa88529963278f7dd24097c4c3de2b3a9164d06cd23d7cccd96bd31fea88311ded576c834a73e2d669e6d290404283f33f92b9bf262'
+b2sums=('2e8e4ee98f904aa02f304a6c3cbbb81d04802203e270e6b8ad2b7a62b334ac28f5e91687d7a92501f66b0043255a533d024537ff5ef3f2f03d986e46a7272eeb'
         'SKIP'
         '1ecf007b82260710a7bf5048f47dd5d600c168824c02c595af654632326536a6527fbe0738670ee7b921dd85a70425108e0f471ba85a8e1ca47d294ad74b4adb'
         '09792246c414433fd370732fba6d36561977ef18962c8853fec9cbb2c744d33eaaa8bb92f969710daa56c6cb852b6ed7b8c48bb07f4759d4e450eeb9363a94ad'
